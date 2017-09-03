@@ -1,0 +1,1 @@
+ffmpeg -loop 1 -i ${1} -f jack -i ffmpeg -c:a aac -c:v libx264 -preset ultrafast -maxrate 2000k -b:a 82k -vf "scale=480:-1,format=yuv420p" -g 60 -strict -2 -f flv -ar 44100  rtmp://de.pscp.tv:80/x/${2}
